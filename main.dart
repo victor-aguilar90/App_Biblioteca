@@ -30,7 +30,7 @@ class _CorpoState extends State<Corpo> {
       body: Center(
         child: Container(
           width: 341,
-          height: 409,
+          height: 502,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -71,7 +71,12 @@ class _CorpoState extends State<Corpo> {
                 ),
                 child: Text("Entrar", style: TextStyle(fontSize: 24),),
                 ),
-                SizedBox(height: 42,)
+                SizedBox(height: 42,),
+                Text("Não tem conta ainda?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400), textAlign: TextAlign.left,),
+                InkWell(
+                  onTap: () {},
+                  child: Text("Crie uma conta", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.blue),),
+                )
             ],
           ),
         ),

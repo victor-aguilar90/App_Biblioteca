@@ -9,7 +9,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Corpo(),
       debugShowCheckedModeBanner: false,
     );
@@ -27,49 +27,55 @@ class _CorpoState extends State<Corpo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 50.0),
-        child: Column(
+      body: Center(
+        child: Container(
+          width: 341,
+          height: 409,
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Login", style: TextStyle(fontSize: 30), textAlign: TextAlign.left,),
-              SizedBox(height: 10,),
               Container(
                 width: 341,
-                child: TextField(
+                child: Text("Login", style: TextStyle(fontSize: 40,), textAlign: TextAlign.left),
+              ),
+              SizedBox(height: 56,),
+              TextField(
                 keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(labelText: "Email", hintText: "Digite seu Email", border: InputBorder.none),
+                decoration: InputDecoration(
+                  labelText: "Email",
+                  labelStyle: TextStyle(fontSize: 20),
+                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  hintText: "Digite seu email",
                 ),
               ),
-                SizedBox(height: 10,),
-                Container(
-                  width: 341,
-                  child: TextField(
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Senha",
-                    labelStyle: TextStyle(fontSize: 20),
-                    hintText: "Digite sua senha",
-                    hintStyle:TextStyle(fontSize: 16) ,
-                  ),
+              SizedBox(height: 31,),
+              TextField(
+                obscureText: true,
+                keyboardType: TextInputType.visiblePassword,
+                decoration: InputDecoration(
+                  labelText: "Senha",
+                  labelStyle: TextStyle(fontSize: 20),
+                  hintText: "Digite sua senha",
                 ),
-                ),
-                SizedBox(height: 20,),
-                ElevatedButton(
-                  onPressed: () => {}, 
-                  child: Text("Entrar", style: TextStyle(color: Colors.white, fontSize: 20),),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0)
-                    ),
-                    minimumSize: Size(341, 50),
-                    ),
+              ),
+              SizedBox(height: 43,),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(341, 50),
+                  primary: Colors.black,
+                  onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
                   )
-              ],
-            ),
-        ),  
+                ),
+                child: Text("Entrar", style: TextStyle(fontSize: 24),),
+                ),
+                SizedBox(height: 42,)
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

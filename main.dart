@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main () {
   runApp(Login());
@@ -36,17 +37,23 @@ class _CorpoState extends State<Corpo> {
             children: [
               Container(
                 width: 341,
-                child: Text("Login", style: TextStyle(fontSize: 40,), textAlign: TextAlign.left),
+                child: Text("Login", style: GoogleFonts.poppins(fontSize: 40, fontWeight: FontWeight.w500, ), textAlign: TextAlign.left),
               ),
               SizedBox(height: 56,),
               TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: "Email",
-                  labelStyle: TextStyle(fontSize: 20),
-                  floatingLabelBehavior: FloatingLabelBehavior.never,
+                  labelStyle: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400),
                   hintText: "Digite seu email",
+                  hintStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300)
                 ),
+                //controller: ,
+                onChanged: (value) {
+                  setState(() {
+                     
+                  });
+                },
               ),
               SizedBox(height: 31,),
               TextField(
@@ -54,28 +61,28 @@ class _CorpoState extends State<Corpo> {
                 keyboardType: TextInputType.visiblePassword,
                 decoration: InputDecoration(
                   labelText: "Senha",
-                  labelStyle: TextStyle(fontSize: 20),
+                  labelStyle: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400),
                   hintText: "Digite sua senha",
+                  hintStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300)
                 ),
               ),
               SizedBox(height: 43,),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
                   minimumSize: Size(341, 50),
-                  primary: Colors.black,
-                  onPrimary: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)
                   )
-                ),
-                child: Text("Entrar", style: TextStyle(fontSize: 24),),
+                ), 
+                child: Text("Entrar", style: TextStyle(fontSize: 24, color: Colors.white),),
                 ),
                 SizedBox(height: 42,),
-                Text("Não tem conta ainda?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400), textAlign: TextAlign.left,),
+                Text("Não tem conta ainda?", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w400), textAlign: TextAlign.left,),
                 InkWell(
                   onTap: () {},
-                  child: Text("Crie uma conta", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.blue),),
+                  child: Text("Crie uma conta", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.blue),),
                 )
             ],
           ),

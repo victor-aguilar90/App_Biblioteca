@@ -1,105 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(SignUp());
+void main(){
+  runApp(PaginaP());
 }
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class PaginaP extends StatelessWidget {
+  const PaginaP({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: cadastro(),
+    return const MaterialApp(
+      home: Pagina(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class cadastro extends StatefulWidget {
-  const cadastro({super.key});
+class Pagina extends StatefulWidget {
+  const Pagina({super.key});
 
   @override
-  State<cadastro> createState() => _cadastroState();
+  State<Pagina> createState() => _PaginaState();
 }
 
-class _cadastroState extends State<cadastro> {
+class _PaginaState extends State<Pagina> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Container(
-          width: 341,
-          height: 642,
-          child: Column(
-            children: [
-              Container(
-                width: 341,
-                child: Text("Cadastre-se", style: GoogleFonts.poppins(fontSize: 40, fontWeight: FontWeight.w500,), textAlign: TextAlign.left,),
-              ),
-              SizedBox(height: 46,),
-              TextField(
-                keyboardType: TextInputType.name,
-                decoration: InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  labelText: "Nome Completo",
-                  labelStyle: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black,),
-                  hintText: "Digite seu nome completo",
-                  hintStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
-                ),
-              ),
-              SizedBox(height: 31,),
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  labelText: "Endereço de Email",
-                  labelStyle: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black),
-                  hintText: "Digite seu email",
-                  hintStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
-                ),
-              ),
-              SizedBox(height: 31,),
-              TextField(
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                decoration: InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  labelText: "Senha",
-                  labelStyle: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black),
-                  hintText: "Digite uma senha",
-                  hintStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
-                ),
-              ),
-              SizedBox(height: 31,),
-              TextField(
-                keyboardType: TextInputType.visiblePassword,
-                decoration: InputDecoration(
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  labelText: "Confirmar senha",
-                  labelStyle: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w400, color: Colors.black),
-                  hintText: "Digite sua senha novamente",
-                  hintStyle: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w300),
-                ),
-              ),
-              SizedBox(height: 46,),
-              ElevatedButton(
-                onPressed: () => (), 
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(341, 57),
-                  backgroundColor: Colors.black,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  )
-                ),
-                child: Text("Criar Conta", style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w600, color: Colors.white),),
-                ),
-            ],
-          ),
-        ),
+      drawer: Drawer(),
+      appBar: AppBar(
+        title: Text("Biblioteca Ohara", style: GoogleFonts.poppins(fontSize: 28, fontWeight: FontWeight.w500, shadows: [Shadow(blurRadius: 3.0, color: Colors.black.withOpacity(0.25), offset: Offset(0, 4))]),),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.white,), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.book),label: "Books")
+        ],
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:app_biblioteca/cadastro.dart';
+import 'package:app_biblioteca/biblioteca.dart';
 
 void main () {
   runApp(Login());
@@ -68,20 +70,24 @@ class _CorpoState extends State<Corpo> {
               ),
               SizedBox(height: 43,),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaginaP()));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  minimumSize: Size(341, 50),
+                  minimumSize: Size(341, 57),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)
                   )
                 ), 
-                child: Text("Entrar", style: TextStyle(fontSize: 24, color: Colors.white),),
+                child: Text("Entrar", style: GoogleFonts.poppins(fontSize: 26, fontWeight: FontWeight.w600, color: Colors.white),),
                 ),
                 SizedBox(height: 42,),
                 Text("Não tem conta ainda?", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w400), textAlign: TextAlign.left,),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp()));
+                  },
                   child: Text("Crie uma conta", style: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w400, color: Colors.blue),),
                 )
             ],

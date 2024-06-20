@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:app_biblioteca/cadastro.dart';
-import 'package:app_biblioteca/biblioteca.dart';
+import 'package:app_biblitoteca/cadastro.dart';
+import 'package:app_biblitoteca/biblioteca.dart';
 
 void main () {
   runApp(Login());

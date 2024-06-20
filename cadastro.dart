@@ -28,7 +28,6 @@ class _cadastroState extends State<cadastro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundcolor: Colors.Black,
       body: Center(
         child: Container(
           width: 341,

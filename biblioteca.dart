@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:app_biblitoteca/menu.dart';
 
 void main(){
   runApp(PaginaP());
@@ -25,12 +26,29 @@ class Pagina extends StatefulWidget {
 }
 
 class _PaginaState extends State<Pagina> {
+  final String imageUrl = "https://ocapista.com.br/imgs/capas/livro_de_horror_capa_livro_2.jpg";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: Drawer(
-
+        child: ListView(    
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+          children: [
+            itemmenu(texto: "Menu", icone: Icons.home),
+            SizedBox(height: 10,),
+            itemmenu(texto: "Menu", icone: Icons.home),
+            SizedBox(height: 10,),
+            itemmenu(texto: "Menu", icone: Icons.home),
+            SizedBox(height: 10,),
+            itemmenu(texto: "Menu", icone: Icons.home),
+            SizedBox(height: 10,),
+            itemmenu(texto: "Menu", icone: Icons.home),
+            SizedBox(height: 10,),
+            itemmenu(texto: "Menu", icone: Icons.home),
+          ],
+        ),
       ),
       appBar: AppBar(
 
@@ -48,7 +66,7 @@ class _PaginaState extends State<Pagina> {
               width: 380,
               child: Text("Livros", style: GoogleFonts.poppins(fontSize: 30), textAlign: TextAlign.left,),
             ),
-            SizedBox(height: 15,),
+            SizedBox(height: 10,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -58,7 +76,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage(imageUrl),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -67,7 +89,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/capa_livro_fantasia.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -76,7 +102,12 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/capa_livro_fantasia_romance.jpg"),
+                        fit: BoxFit.cover
+                        )
+
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -85,19 +116,23 @@ class _PaginaState extends State<Pagina> {
                     height: 235,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/fantasia_capa_livro.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 25,),
             Container(
               width: 380,
               child: Text("Terror", style: GoogleFonts.poppins(fontSize: 30), textAlign: TextAlign.left,),
             ),
-            SizedBox(height: 12,),
+            SizedBox(height: 10,),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -107,7 +142,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/capa_livro_corvos.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -116,7 +155,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/a_arte_da_guerra_capa_livro.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -125,7 +168,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/1984_capa_livro_george_orwell.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -134,14 +181,18 @@ class _PaginaState extends State<Pagina> {
                     height: 235,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/sherlock_holmes_capa_livro.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 25,),
             Container(
               width: 380,
               child: Text("Drama", style: GoogleFonts.poppins(fontSize: 30), textAlign: TextAlign.left,),
@@ -156,7 +207,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/livro_de_suspense_noir_livro_capa.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -165,7 +220,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/a_alienator.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -174,7 +233,11 @@ class _PaginaState extends State<Pagina> {
                     height: 232,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25)
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/a_arte_do_incompleto.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
@@ -183,13 +246,18 @@ class _PaginaState extends State<Pagina> {
                     height: 235,
                     decoration: BoxDecoration(
                       color: Colors.black,
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: NetworkImage("https://ocapista.com.br/imgs/capas/a_arte_do_incompleto.jpg"),
+                        fit: BoxFit.cover
+                        )
                     ),
                   ),
                   SizedBox(width: 17,),
                 ],
               ),
             ),
+            SizedBox(height: 30,)
           ],
         )
       )
